@@ -37,8 +37,81 @@
     padding: 16px;
 }
 
+.chart {
+    width: 100%;
+    min-height: 280px;
+}
+
+#timeToRender {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #d85757;
+    padding: 0px 4px;
+    color: #ffffff;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.card {
+    min-width: 45vw !important;
+}
+
 .sp-between {
     display: flex;
     justify-content: space-between;
     align-content: center;
+}
+
+a {
+    border-bottom: 2px solid transparent;
+}
+
+a:hover {
+    color: coral !important;
+    border-bottom: 2px solid coral;
+}
+
+.infotext {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.infotext p {
+    margin: 0;
+}
+
+#dataSelector {
+    width: 50%;
+}
+
+.form-group input {
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.form-group input:hover {
+    background-color: #4d4b4b;
+    color: #ffffff;
+}
+
+.DateContainer {
+    padding: 2rem;
+    text-align: center;
+}
+
+@media(max-width:575px) {
+    .infotext {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

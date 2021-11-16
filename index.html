@@ -9,36 +9,80 @@
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="src/js/include.js"></script>
     <script src="src/js/script.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="src/js/localStorage.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
-<!--<body onload="includeHTML()">-->
+<body onload="init()">
 
-<body>
+    <div class="container DateContainer">
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <form class="form-inline">
+                    <div class="form-group col-sm-12">
+                        <label for="datepicker" class="col-sm-12">Anfangsdatum</label>
+                        <input type="text" class="form-control col-sm-12" id="datepickerStart" placeholder="Select a Date" readonly>
+                    </div>
+                </form>
+                <form class="form-inline">
+                    <div class="form-group col-sm-12">
+                        <label for="datepicker" class="col-sm-12">Enddatum</label>
+                        <input type="text" class="form-control col-sm-12" id="datepickerEnd" placeholder="Select a Date" readonly>
+                    </div>
+                </form>
+            </div>
 
-    <main>
+            <div class="form-group col-sm-6 infotext">
+                <select id="dataSelector" class="form-select" aria-label="Default select example">
+                <option value="0" selected>BITFINEX</option>
+                <option value="1">LBMA</option>
+                <option value="2">EUREX</option>
+                <option value="3">SHFE</option>
+              </select>
+            </div>
+        </div>
+    </div>
 
+    <div class="container">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    </div>
+    <!--
+    <script type="text/javascript">
+        $(document).ready(function() {
 
-        <article>
-            <section>
-                <!--<div w3-include-html="src/templates/nav.html"></div>-->
+            $("#datepickerEnd").datepicker({
+                    format: 'yyyy-mm-dd',
+                    autoclose: true,
+                    setEndDate: 'now',
+                })
+                .on('changeDate', function(selected) {
+                    var maxDate = new Date(selected.date.valueOf());
+                    $('#datepickerStart').datepicker('setEndDate', maxDate);
+                });
 
-            </section>
+            $("#datepickerStart").datepicker({
+                todayBtn: 1,
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+            }).on('changeDate', function(selected) {
+                var minDate = new Date(selected.date.valueOf());
+                $('#datepickerEnd').datepicker('setStartDate', minDate);
+            });
 
-            <section>
-
-            </section>
-
-
-        </article>
-    </main>
-
-
-    <footer>
-
-    </footer>
-
-
+            $('#datepickerStart').datepicker('update', 'yesterday');
+            $('#datepickerStart').datepicker('setEndDate', 'now');
+            $('#datepickerEnd').datepicker('update', 'now');
+            $('#datepickerEnd').datepicker('setStartDate', 'yesterday');
+            $('#datepickerEnd').datepicker('setEndDate', 'now');
+        });
+    </script>-->
 </body>
 
 </html>
